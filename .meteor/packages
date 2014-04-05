@@ -7,3 +7,6 @@ standard-app-packages
 autopublish
 insecure
 router
+bootstrap-3
+accounts-ui
+accounts-facebook
