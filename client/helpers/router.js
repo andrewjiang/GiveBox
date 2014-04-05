@@ -1,3 +1,7 @@
+
 Meteor.Router.add({
-	'/': 'home'
+	'/': 'home',
+	'/get_wishlist_api' : '../get_wishlist_api/get_wishlist_api',
 });
+
+
