@@ -1,7 +1,7 @@
 <template name="newstory">
 	<div class="container">
 			<center>
-				<h1>Tell us about you</h1>
+				<h1>Create your profile</h1>
 			</center>
 			<br>
 			<div class="well">
@@ -10,15 +10,11 @@
 						<form role="form">
 							<div class="form-group">
 						    <label for="storyName">Name</label>
-						    <input type="text" class="form-control" id="storyName" placeholder="John Smith">
+						    <input type="text" class="form-control" id="storyName" placeholder="John Smith" name="name">
 						  </div>
 						  <div class="form-group">
 						    <label for="storyEmail">Email</label>
-						    <input type="email" class="form-control" id="storyEmail" placeholder="john@gmail.com">
-						  </div>
-						  <div class="form-group">
-						    <label for="exampleInputPassword1">Password</label>
-						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						    <input type="email" class="form-control" id="storyEmail" placeholder="john@gmail.com" name="email">
 						  </div>
 						  <button type="submit" class="btn btn-default">Next</button>
 						</form>
@@ -40,12 +36,12 @@
 						<form role="form">
 							<div class="form-group">
 						    <label for="exampleInputFile">Tell us your story</label>
-						    <textarea class="form-control" id="exampleInputFile"></textarea>
+						    <textarea class="form-control" id="exampleInputFile" name="description"></textarea>
 						    <p class="help-block">Example block-level help text here.</p>
 						  </div>
 							<div class="form-group">
 						    <label for="exampleInputFile">Upload Images</label>
-						    <input type="file" id="exampleInputFile">
+						    <input type="file" id="exampleInputFile" name="image">
 						    <p class="help-block">Example block-level help text here.</p>
 						  </div>
 						  <button type="submit" class="btn btn-default">Next</button>
@@ -59,7 +55,9 @@
 <template name="newstory3">
 	<div class="container-fluid">
 			<center>
-				<h1>Set up your wishlist</h1>
+				<h1>{{#with currentStory}}{{name}}{{/with}}
+
+					Set up your wishlist</h1> <button>Finish</button>
 			</center>
 			<br>
 			<div class="well">

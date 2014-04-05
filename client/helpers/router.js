@@ -1,7 +1,12 @@
 Meteor.Router.add({
 	'/': 'home',
-	'/story':'story',
 	'/story/profile':'newstory',
-	'/story/story':'newstory2',
-	'/story/wishlist':'newstory3',
+	'/newStory/:_id': {
+		to: 'newstory2',
+		and: function(id) { Session.set("currentStoryId", id); }
+	},
+	'/newWishlist/:_id': {
+		to: 'newstory3',
+		and: function(id) { Session.set("currentStoryId", id); }
+	},
 });
