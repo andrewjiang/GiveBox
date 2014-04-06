@@ -127,10 +127,10 @@ setTimeout(function(){
       h += '<div class="panel panel-default">';
       h += '<div class="panel-heading"><h4>Donation $' + logs[i].price + '</h4></div>';
       h += '<div class="panel-body">';
-      h += '$' + logs[i].price + ' donation from user. <br/>';
+      h += '$' + logs[i].price + ' donation from Anonymous User. <br/>';
       var temp = logs[i].itemnames;
       for(var j in temp){
-        h += temp[j] + '<br/>';
+        h += ' - '+ temp[j] + '<br/>';
       }
       h += '</div></div>';
     }

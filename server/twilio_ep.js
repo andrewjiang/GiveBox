@@ -5,9 +5,9 @@ if (Meteor.isServer) {
 	 	
 		twilio = Twilio('AC6f496c11704357c01bce024c38d8be96', '81e87fa1f013dd82358c84372b483909');
 		  twilio.sendSms({
-		    to:'19176794570', // Any number Twilio can deliver to
+		    to:'+15106463356', // Any number Twilio can deliver to
 		    from: '+19175254518', // A number you bought from Twilio and can use for outbound communication
-		    body: 'Somebody has donate money to you.' // body of the SMS message
+		    body: 'Somebody has donated money to you!' // body of the SMS message
 		  }, function(err, responseData) { //this function is executed when a response is received from Twilio
 		    if (!err) { // "err" is an error received during the request, if any
 		      // "responseData" is a JavaScript object containing data received from Twilio.
