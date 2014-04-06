@@ -14,6 +14,8 @@ Meteor.Router.add({
 		and: function(id) { Session.set("currentStoryId", id); }
 	},
 
+	'/buy': 'buy',
+
 	'/all': 'all',
 
 	'/upload_story': {
