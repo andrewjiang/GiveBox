@@ -5,7 +5,8 @@
       "router": {},
       "require": {},
       "bootstrap-3": {},
-      "npm": {}
+      "npm": {},
+      "paypal": {}
     },
     "packages": {
       "router": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/arunoda/meteor-npm.git",
         "tag": "v0.2.6",
         "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
+      },
+      "paypal": {
+        "git": "https://github.com/DavidBrear/meteor-paypal.git",
+        "tag": "v1.1.1",
+        "commit": "eeff60449511f6caa0d0aaf433ea8a06b426858e"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",

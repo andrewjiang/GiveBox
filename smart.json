@@ -3,6 +3,7 @@
     "router": {},
     "require": {},
     "bootstrap-3": {},
-    "npm": {}
+    "npm": {},
+    "paypal": {}
   }
 }
