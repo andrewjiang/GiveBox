@@ -20,9 +20,12 @@ Template.newstory2.events({
 
 		console.log(story)
 
-		Stories.update({_id:story._id},{$set: {description: $(event.target).find('[name=description]').val()}});
+		Stories.update({_id:story._id},{$set: {
+			description: $(event.target).find('[name=description]').val(),
+			image: $(event.target).find('[name=image]').val()
+		}});
 
-		Meteor.Router.to('newstory3', Session.get("currentStoryId")); 
+		Meteor.Router.to('story', Session.get("currentStoryId")); 
 	}
 });
 
