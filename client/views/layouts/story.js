@@ -73,7 +73,7 @@ Template.paypalCreditCardForm.events({
             $('#myModal').modal('hide');
             $('#confirmModal').modal('show');
         	 console.log(results);
-           Log.insert( {"price" : totalprice3,"id":Session.get("currentStoryId"),"itemnames":itemnames});
+           Timeline.insert( {"price" : totalprice3,"id":Session.get("currentStoryId"),"itemnames":itemnames});
 
            Meteor.http.get('/twilio_ep',{},function(ret){console.log(ret)});
         	 Wishlist.update(item_id, {"data":newdata, "email":mail});
@@ -118,7 +118,7 @@ setTimeout(function(){
 	}
 	$("#wishlist_table").html(html);	
 
-  var logs = Log.find({"id":Session.get("currentStoryId")}).fetch();
+  var logs = Timeline.find({"id":Session.get("currentStoryId")}).fetch();
   var h = '';
   for(var i in logs){
     if (logs[i].price && logs[i].itemnames){
