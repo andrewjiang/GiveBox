@@ -10,8 +10,8 @@ if (Meteor.isServer) {
         wishlistId = text.substring(text.indexOf("wishlist") + "wishlist/".length, text.indexOf("ref") - 1);
         
         mail = from.substring(from.indexOf("<") + 1, from.indexOf(">"))
-        //mail="xliang02@students.poly.edu";
-        //wishlistId="10O33TKEEAWL6";
+        //mail="andrew.h.jiang@gmail.com";
+        //wishlistId="29VXUTQHWTVV6";
         console.log("http://fromneilwithlove.herokuapp.com/wishlist.php?id=" + wishlistId);
         HTTP.get("http://fromneilwithlove.herokuapp.com/wishlist.php?id=" + wishlistId,
           {},
