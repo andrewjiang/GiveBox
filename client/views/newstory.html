@@ -1,7 +1,8 @@
 <template name="newstory">
-	<div class="container">
+	{{>header_sm}}
+	<div class="container-light">
 			<center>
-				<h1 style="color:#ddd">Tell us about you</h1>
+				<h1>Tell us about you</h1>
 			</center>
 			<br>
 			<div class="well">
@@ -17,10 +18,10 @@
 						    <input type="text" class="form-control" id="storyAge" placeholder="30" name="age">
 						  </div>
 						  <div class="form-group">
-						    <label for="storyAddress">Address</label>
+						    <label for="storyAddress">Address for packages</label>
 						    <input type="text" class="form-control" id="storyAddress" placeholder="2424 Haste St. Berkeley, CA 94704" name="address">
 						    <br>
-						    <i>Don't have an address?</i> <div class="btn btn-info" id="locker" style="margin-left: 20px; border-radius: 10px;">Find nearest Amazon Locker</div>
+						    <i>Don't have a reliable address?</i> <input type="text" style="margin-left: 20px;" placeholder="Zip Code"> <div class="btn btn-info" id="locker" style="margin-left: 10px; border-radius: 10px;">Find nearest Amazon Locker</div>
 						  </div>
 						  <div class="form-group">
 						    <label for="storyFamily">Family Members</label>
@@ -39,9 +40,10 @@
 </template>
 
 <template name="newstory2">
-	<div class="container">
+	{{>header_sm}}
+	<div class="container-light">
 			<center>
-				<h1 style="color:#ddd">Write your story</h1>
+				<h1>Write your story</h1>
 			</center>
 			<br>
 			<div class="well">

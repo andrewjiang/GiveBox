@@ -1,11 +1,29 @@
 <template name="header_sm">
-	<nav class="navbar navbar-default" role="navigation" id="givebox-header">
+
+  <nav class="navbar navbar-default" role="navigation" id="givebox-header">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
-      GIVEBOX
+      <div class="cbp-af-header cbp-af-header-sm">
+          <div class="cbp-af-inner">
+              <img src=""/>
+              <a href="/"><h1>GIVEBOX</h1></a>
+
+
+              <nav>
+                  <a href="#">Donate</a>
+                  <a href="/story/profile">Add your story</a>
+                  <a href="#">{{>loginButtons}}</a>
+              </nav>
+              <br/><br/>
+              <div class="blurb">
+                <h2>Support local families in need</h2>
+                <h3 style="margin-top:0px;">Directly donate items to low-income families from their wishlist</h3>
+              </div>
+          </div>
+      </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
 
     </div><!-- /.container-fluid -->
 
-  </nav>
+</nav>
 </template>
