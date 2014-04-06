@@ -15,9 +15,10 @@ Template.newstory.events({
 		Meteor.Router.to('newstory2', story); 
 	},
 	'click #locker': function(event) {
-
+		setTimeout(
+			function(){
 		$("#storyAddress").val("370 Turk St, Located in Fort Knox Storage, San Francisco CA 94102");
-
+		},1000);
 	},
 });
 
