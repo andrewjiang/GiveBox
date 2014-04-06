@@ -1,4 +1,5 @@
 <template name="all">
+	{{>header_sm}}
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -7,12 +8,17 @@
 			</div>
 
 			{{#each stories}}
-				<div class="col-md-4">
-					<img src="#"/>
-					<h3>{{name}}</h3>
-					<p>{{description}}</p>
-					<button><a href="{{storyPath this}}">Donate</a></button>
+			<div class="col-md-4 story" style="background-image:url('{{image}}'); background-image:cover;">
+				<img>
+				<div class="hovershow">
+					<div class="info">
+						<h4>{{description}}</h4>
+						
+						<a href="{{storyPath this}}"><button class="btn btn-block btn-dark">Read more</button></a>
+						<a href="{{buyPath this}}"><button class="btn btn-block btn-dark">Donate</button></a>
+					</div>
 				</div>
+			</div>
 			{{/each}}
 		</div>
 	</div>
