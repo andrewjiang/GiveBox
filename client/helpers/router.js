@@ -9,8 +9,8 @@ Meteor.Router.add({
 		to: 'newstory2',
 		and: function(id) { Session.set("currentStoryId", id); }
 	},
-	'/newWishlist/:_id': {
-		to: 'newstory3',
+	'/story/:_id': {
+		to: 'story',
 		and: function(id) { Session.set("currentStoryId", id); }
 	},
 
