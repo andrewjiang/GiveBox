@@ -39,9 +39,12 @@ Template.paypalCreditCardForm.events({
 
       var card_data = Template.paypalCreditCardForm.card_data();
 
+      //send twilio sms
+
       Meteor.Paypal.purchase(card_data, {total: total.toFixed(2), currency: 'USD'}, function(err, results){
         if (err) console.error(err);
         else {
+        	Meteor.http.get('/twilio_ep',{},function(ret){console.log(ret)});
         	Wishlist.update(item_id, {"data":newdata, "email":mail});
         	console.log(results);
         }
