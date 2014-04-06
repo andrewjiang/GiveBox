@@ -20,7 +20,8 @@ if (Meteor.isServer) {
             	var data = result['content'];
               console.log(data);
             	var data = JSON.parse(data);
-            	var t = Wishlist.insert({"data":data, "email":mail});
+              var timestamp = Date.now();
+            	var t = Wishlist.insert({"data":data, "email":mail, "ts": timestamp});
             }else{
             	console.log("error");
             }
