@@ -4,6 +4,8 @@
     "require": {},
     "bootstrap-3": {},
     "npm": {},
-    "paypal": {}
+    "paypal": {},
+    "moment": {},
+    "twilio-meteor": {}
   }
 }

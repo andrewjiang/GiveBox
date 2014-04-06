@@ -15,3 +15,5 @@ accounts-facebook
 email
 npm
 paypal
+moment
+twilio-meteor
