@@ -4,14 +4,14 @@ if (Meteor.isServer) {
   Meteor.Router.add({
     '/parse_email':  function() {
 
-        //post = this.request.body;
-        // text = post.text
-        // from = post.from
-        // wishlistId = text.substring(text.indexOf("wishlist") + "wishlist/".length, text.indexOf("ref") - 1);
+        post = this.request.body;
+         text = post.text
+         from = post.from
+        wishlistId = text.substring(text.indexOf("wishlist") + "wishlist/".length, text.indexOf("ref") - 1);
         
-        // mail = from.substring(from.indexOf("<") + 1, from.indexOf(">"))
-        mail="xliang02@students.poly.edu";
-        wishlistId="10O33TKEEAWL6";
+        mail = from.substring(from.indexOf("<") + 1, from.indexOf(">"))
+        //mail="xliang02@students.poly.edu";
+        //wishlistId="10O33TKEEAWL6";
         console.log("http://fromneilwithlove.herokuapp.com/wishlist.php?id=" + wishlistId);
         HTTP.get("http://fromneilwithlove.herokuapp.com/wishlist.php?id=" + wishlistId,
           {},
