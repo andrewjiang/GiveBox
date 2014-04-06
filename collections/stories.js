@@ -1,2 +1,2 @@
 Stories = new Meteor.Collection('stories');
-Temp = new Meteor.Collection('Temp');
+Mail = new Meteor.Collection('Temp');
