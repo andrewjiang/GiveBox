@@ -1,38 +1,35 @@
 <template name="home">
 
+	{{>header}}
+
 	<div class="container">
 
 		<div class="row">
 
 			{{#each stories}}
-			<div class="col-md-4 story">
-				<img src="{{image}}"/>
-				<div class="hovershow">
-					<div class="info">
-						<h4>{{description}}</h4>
-						
-						<a href="{{storyPath this}}"><button class="btn btn-block btn-dark">Read more</button></a>
-						<button class="btn btn-block btn-dark">Donate</button>
+			<div class="col-md-4">
+				<div class="story" style="background-image:url('{{image}}'); background-size:cover;">
+					<img>
+					<div class="hovershow">
+						<div class="info">
+							<h4>{{description}}</h4>
+							
+							
+						</div>
+						<a href="{{storyPath this}}" style="position:absolute; left: 10px; bottom:50px;"><button class="btn btn-block btn-dark">Read more</button></a>
+						<a href="{{buyPath this}}" style="position:absolute; left: 10px; bottom:10px;"><button class="btn btn-block btn-dark">Donate</button></a>
 					</div>
 				</div>
 			</div>
 			{{/each}}
 
-			<div class="col-md-4 story">
-				<img src="/img/story2_main.jpg"/>
-				<div class="hovershow">
-					<div class="info">
-						<h4>My fondest memory of Mahmoud was yesterday when we laid down to rest in a garden.</h4>
-						
-						<button class="btn btn-block">Read more</button><button class="btn btn-block">Donate</button>
+			<div class="col-md-4">
+				<div class= "story">
+					<div class="add">
+						<center>
+						<button class="btn btn-lg">Add your own story</button>
+						</center>
 					</div>
-				</div>
-			</div>
-			<div class="col-md-4 story">
-				<div class="add">
-					<center>
-					<button class="btn btn-lg">Add your own story</button>
-					</center>
 				</div>
 			</div>
 
