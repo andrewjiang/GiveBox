@@ -1,7 +1,4 @@
-if (Meteor.isClient) {
 
-
-}
 
 Template.story.helpers({ 
 	currentStory: function() {
@@ -14,7 +11,7 @@ Template.story.helpers({
 Template.paypalCreditCardForm.events({
     'submit #paypal-payment-form': function(evt, tmp){
       evt.preventDefault();
-      var prices = document.getElementsByClassName('price');
+      var prices = document.getElementsByTagName('price');
       console.log(prices);
       var total = 0;
       for (var i in prices){
@@ -45,7 +42,10 @@ setTimeout(function(){
 		var item = items['data'][i];
 		html += "<tr><td>" + item.name + "</td>";
 		html += "<td><img src='" +item.picture + "'></td>";
-		html += "<td class='price'>" +item['neil-price'] + "</td>";
+		html += "<td >" + item['neil-price'] + "</td>";
+		html += "<td>";
+		html += "<input type='checkbox' name='price' value='" + item['neil-price'] + "'>";
+		html += "</td>";
 		html += "</tr>";
 	}
 	$("#wishlist_table").html(html);		
