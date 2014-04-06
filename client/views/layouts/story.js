@@ -53,7 +53,9 @@ Template.paypalCreditCardForm.events({
 
 setTimeout(function(){
 	//var items = Wishlist.findOne({"email":Stories.findOne(Session.get("currentStoryId")).email});
-	var items = Wishlist.findOne({"email":"xliang02@students.poly.edu"});
+	//var items = Wishlist.findOne({"email":"xliang02@students.poly.edu"});
+      var items = Wishlist.findOne({"email":Stories.findOne(Session.get("currentStoryId")).email});
+
 	var html = '';
 	for(var i in items['data']){
 		var item = items['data'][i];
