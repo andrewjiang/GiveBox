@@ -11,15 +11,31 @@ Template.story.helpers({
 Template.paypalCreditCardForm.events({
     'submit #paypal-payment-form': function(evt, tmp){
       evt.preventDefault();
-      var prices = document.getElementsByTagName('price');
-      console.log(prices);
+      var prices = document.getElementsByClassName('price');
       var total = 0;
+      var items = Wishlist.findOne({"email":Stories.findOne(Session.get("currentStoryId")).email});
+      item_id = items['_id']
+      var data = items['data'];
       for (var i in prices){
       	var price = prices[i];
       	console.log(price);
-      	price = price.innerHTML;
-      	if(price) total += Number(price.substring(1));
+      	if (price.checked) {
+	      	price = price.value;
+	      	if(price) {
+	      		total += Number(price.substring(1));
+	      		data[i] = null;
+	      	}
+      	}
       }
+
+      newdata = [];
+      for(var j = 0; j < data.length; j++){
+      	if(data[i] !== null) {
+      		newdata.push_back(data[i]);
+      	}
+      }
+      console.log(newdata);
+      mail = Stories.findOne(Session.get("currentStoryId")).email;
       console.log(total);
 
       var card_data = Template.paypalCreditCardForm.card_data();
@@ -28,7 +44,10 @@ Template.paypalCreditCardForm.events({
 
       Meteor.Paypal.purchase(card_data, {total: total, currency: 'USD'}, function(err, results){
         if (err) console.error(err);
-        else console.log(results);
+        else {
+        	Wishlist.update(item_id, {"data":newdata, "email":mail});
+        	console.log(results);
+        }
       });
     }
   });
@@ -44,7 +63,7 @@ setTimeout(function(){
 		html += "<td><img src='" +item.picture + "'></td>";
 		html += "<td >" + item['neil-price'] + "</td>";
 		html += "<td>";
-		html += "<input type='checkbox' name='price' value='" + item['neil-price'] + "'>";
+		html += "<input type='checkbox' class='price' value='" + item['neil-price'] + "'/>";
 		html += "</td>";
 		html += "</tr>";
 	}
