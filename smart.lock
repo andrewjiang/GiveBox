@@ -6,7 +6,9 @@
       "require": {},
       "bootstrap-3": {},
       "npm": {},
-      "paypal": {}
+      "paypal": {},
+      "moment": {},
+      "twilio-meteor": {}
     },
     "packages": {
       "router": {
@@ -33,6 +35,16 @@
         "git": "https://github.com/DavidBrear/meteor-paypal.git",
         "tag": "v1.1.1",
         "commit": "eeff60449511f6caa0d0aaf433ea8a06b426858e"
+      },
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.5.1",
+        "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
+      },
+      "twilio-meteor": {
+        "git": "https://github.com/andreioprisan/twilio-meteor.git",
+        "tag": "v1.1.0",
+        "commit": "7f36ec52fc334caf8b740320524df62afce890e1"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",

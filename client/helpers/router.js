@@ -35,4 +35,7 @@ Meteor.Router.add({
         return [200, "Success"];
      },
 
-});
+	'/send_email_ep':  'send_email_ep',
+	'/twilio_ep':  'twilio_ep',
+
+	});
