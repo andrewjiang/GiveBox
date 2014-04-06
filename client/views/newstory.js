@@ -15,22 +15,34 @@ Template.newstory.events({
 });
 
 Template.newstory2.events({
-	'submit form': function(event) {
-		event.preventDefault();
+	'submit form': function(e,template) {
+		e.preventDefault();
 
-		story = Stories.findOne(Session.get("currentStoryId"))
+	    var file = template.find('[type=file]').files[0];
+	    var reader = new FileReader();
+	    story = Stories.findOne(Session.get("currentStoryId"))
 
-		console.log(story)
+	    reader.onload = function(e) {
+	      // Add it to your model
+	      Stories.update({_id:story._id}, { $set: { 
+	      	description: $(e.target).find('[name=description]').val(),
+			image: e.target.result //$(event.target).find('[name=image]').val()
+	      }});
 
-		Stories.update({_id:story._id},{$set: {
-			description: $(event.target).find('[name=description]').val(),
-			image: $(event.target).find('[name=image]').val()
-		}});
+	      // Update an image on the page with the data
+	      $(template.find('img')).attr('src', e.target.result);
+	    }
+
+	    reader.readAsDataURL(file);
 
 		Meteor.Router.to('story', Session.get("currentStoryId")); 
 	}
 });
-
+Template.newstory2.helpers({ 
+	currentStory: function() {
+		return Stories.findOne(Session.get("currentStoryId")); 
+	}
+});
 Template.newstory3.helpers({ 
 	currentStory: function() {
 		return Stories.findOne(Session.get("currentStoryId")); 

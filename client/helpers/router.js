@@ -16,6 +16,12 @@ Meteor.Router.add({
 
 	'/all': 'all',
 
+	'/upload_story': {
+		to:'story',
+		and: function(id) {
+			Session.set("currentStoryId", id);
+		},
+	},
 
 	'/parse_email':  function() {
         post = this.request.body;

@@ -1,5 +1,12 @@
 Template.story.helpers({ 
 	currentStory: function() {
-		return Stories.findOne(Session.get("currentStoryId")); 
-	}
+		var profile = Stories.findOne(Session.get("currentStoryId")); 
+		return profile;
+	},
+
+	wishlist: function() {
+		var email = Wishlist.findOne(Session.get("currentStoryId")).email;
+		var items = Wishlist.findOne({"email":email}).data;
+		return items;
+	},
 });
