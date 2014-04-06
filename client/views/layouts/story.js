@@ -34,7 +34,7 @@ setTimeout(function(){
 		var item = items['data'][i];
 		html += "<tr><td>" + item.name + "</td>";
 		html += "<td><img src='" +item.picture + "'></td>";
-		html += "<td class='price'>" +item.neil_price + "</td>";
+		html += "<td class='price'>" +item['neil-price' + "</td>";
 		html += "</tr>";
 	}
 	$("#wishlist_table").html(html);		
