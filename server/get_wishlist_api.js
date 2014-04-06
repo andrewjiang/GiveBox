@@ -11,7 +11,7 @@ if (Meteor.isServer) {
             			console.log( data[i]);
             			console.log("\n");
             	}
-            	Meteor.publish('wishlist_data', data);
+            	//Meteor.publish('wishlist_data', data);
             }else{
             	console.log("error");
             }

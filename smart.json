@@ -1,7 +1,7 @@
 {
   "packages": {
     "router": {},
-    "require": {}
+    "require": {},
     "bootstrap-3": {}
   }
 }
