@@ -14,12 +14,22 @@ Template.story.helpers({
 Template.paypalCreditCardForm.events({
     'submit #paypal-payment-form': function(evt, tmp){
       evt.preventDefault();
+      var prices = document.getElementsByClassName('price');
+      console.log(prices);
+      var total = 0;
+      for (var i in prices){
+      	var price = prices[i];
+      	console.log(price);
+      	price = price.innerHTML;
+      	if(price) total += Number(price.substring(1));
+      }
+      console.log(total);
 
       var card_data = Template.paypalCreditCardForm.card_data();
 
       //Probably a good idea to disable the submit button here to prevent multiple submissions.
 
-      Meteor.Paypal.purchase(card_data, {total: '100.50', currency: 'USD'}, function(err, results){
+      Meteor.Paypal.purchase(card_data, {total: total, currency: 'USD'}, function(err, results){
         if (err) console.error(err);
         else console.log(results);
       });
