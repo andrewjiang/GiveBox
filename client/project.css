@@ -212,7 +212,7 @@ img{
 }
   
 .cbp-af-header nav {
-    margin-left: 140px;
+    margin-left: 80px;
 }
   
 .cbp-af-header nav a {
@@ -232,7 +232,7 @@ img{
  
 .blurb{
     width:60%;
-    color: rgba(44, 62, 80, 0.9) !important;
+    color: #e74c3c !important;
 }
 
 .blurb h2{
@@ -387,4 +387,12 @@ img{
     top: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,1));
     
+}
+
+.logo-img{
+    float: left;
+    height: 70px;
+    width: 70px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
