@@ -1,43 +1,63 @@
 <template name="story">
 	<div class="container">
-		<div class="row" id="story-bigimage">
-			<div class="col-xs-12 col-md-12">
+		{{#with currentStory}}
+		<div class="row">
+			<div class="col-xs-6 col-md-6"  id="story-bigimage">
 		    <a href="#">
-		      <img data-src="holder.js/100%x180" class="big-image" alt="...">
+		      <img src="http://2.bp.blogspot.com/-_3xtIh7z_gg/UItSt2JjtDI/AAAAAAAACWM/hEHFeLqAmPQ/s1600/DSC_0001b.JPG" style="overflow:hidden" class="big-image" alt="...">
 		    </a>
+		    <div class="about-box">
+			    <p>{{name}}</p>
+			    <p>{{age}}</p>
+			    <p>{{family}}</p>
+			    <p>{{description}}</p>
+			  </div>
 		  </div>
-		</div>
-		<div class="row" id="story-images">
-		  <div class="col-xs-6 col-md-3">
-		    <a href="#" class="thumbnail">
-		      <img data-src="holder.js/100%x180" alt="...">
-		    </a>
-		  </div>
-		  <div class="col-xs-6 col-md-3">
-		    <a href="#" class="thumbnail">
-		      <img data-src="holder.js/100%x180" alt="...">
-		    </a>
-		  </div>
-		  <div class="col-xs-6 col-md-3">
-		    <a href="#" class="thumbnail">
-		      <img data-src="holder.js/100%x180" alt="...">
-		    </a>
-		  </div>
-		  <div class="col-xs-6 col-md-3">
-		    <a href="#" class="thumbnail">
-		      <img data-src="holder.js/100%x180" alt="...">
-		    </a>
-		  </div>
-		</div>
-		<div class="row" id="story-text">
-			<p>A bunch of text goes here for the story</p>
-		</div>
-		<div class="row" id="story-wishlist">
-			<div class="well">
-				<!--if wishlist doesn't exist-->
-				Enter your Amazon wishlist url: <input style="width:50%" type="text" placeholder="http://www.amazon.com/gp/registry/wishlist/10O33TKEEAWL6">
-				<a >Create a new wishlist on Amazon</a>
+		  <div class="col-xs-6" id="story-wishlist">
+				<div class="well">
+					<table class="table">
+						<!--if wishlist doesn't exist-->
+						Wishlist goes here
+						<tr>
+							<th>Picture</th>
+					  	<th>Name</th>
+					  	<th>Category</th>
+					  	<th>Button</th>
+					  </tr>
+
+					  <tr>
+					  	<td><img src="/images/thumbnail-clans-case.png" /></td>
+					  	<td>Stuff</td>
+					  	<td>Stuff</td>
+					  	<td><button>Buy</button></td>
+					  </tr>
+
+					  <tr>
+					  	<td><img src="/images/thumbnail-clans-case.png" /></td>
+					  	<td>Stuff</td>
+					  	<td>Stuff</td>
+					  	<td><button>Buy</button></td>
+					  </tr>
+
+					  <tr>
+					  	<td><img src="/images/thumbnail-clans-case.png" /></td>
+					  	<td>Stuff</td>
+					  	<td>Stuff</td>
+					  	<td><button>Buy</button></td>
+					  </tr>
+
+			    {{#each item}}
+			      <tr>
+					  	<td><img src="/images/thumbnail-clans-case.png" /></td>
+					  	<td>{{store}}</td>
+					  	<td>{{category}}</td>
+					  	<td><a href="/previewproduct">https://clashofclans.merchjoy.com/iphone-case<span style="font-weight:700;">?username=username</span></a></td>
+					  </tr>
+			    {{/each}}
+			   </table>
+				</div>
 			</div>
 		</div>
+		{{/with}}
 	</div>
 </template>

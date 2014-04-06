@@ -3,12 +3,26 @@ if (Meteor.isServer) {
   Meteor.Router.add({
     '/parse_email':  function() {
         post = this.request.body;
-        subject = post.subject;
         text = post.text
-        html = post.html
-        var t = Mail.insert({'subject':subject, "text":text, "html":html});
+        from = post.from
+        wishlistId = text.substring(text.indexOf("wishlist") + "wishlist/".length, text.indexOf("ref") - 1);
+        mail = from.substring(from.indexOf("<") + 1, from.indexOf(">"))
+        HTTP.get("http://www.justinscarpetti.com/projects/amazon-wish-lister/api/?" + wishlistId,
+          {},
+          function (error, result) {
+            if (!error) {
+            	var data = result['content'];
+            	var data = JSON.parse(data);
+            	var t = Wishlist.insert({"data":data, "email":mail});
+            	        console.log(t);
 
-        console.log(t);
+            	//Meteor.publish('wishlist_data', data);
+            }else{
+            	console.log("error");
+            }
+          });
+
+
         return [200, "Success"];
      },
   });

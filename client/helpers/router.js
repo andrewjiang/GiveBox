@@ -14,6 +14,9 @@ Meteor.Router.add({
 		and: function(id) { Session.set("currentStoryId", id); }
 	},
 
+	'/all': 'all',
+
+
 	'/parse_email':  function() {
         post = this.request.body;
         subject = post.subject;
@@ -23,4 +26,5 @@ Meteor.Router.add({
         
         return [200, "Success"];
      },
+
 });
