@@ -230,9 +230,13 @@ img{
     color: #666;
 }
  
+.cbp-af-header-sm .blurb{
+    display: none;
+}
+
 .blurb{
-    width:60%;
-    color: #e74c3c !important;
+    width:80%;
+    color: #777 !important;
 }
 
 .blurb h2{
