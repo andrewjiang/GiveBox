@@ -4,76 +4,20 @@
 
 		<div class="row">
 
+			{{#each stories}}
 			<div class="col-md-4 story">
-				<img src="/img/story_main.jpg"/>
+				<img src="{{image}}"/>
 				<div class="hovershow">
 					<div class="info">
-						<h4>My fondest memory of Mahmoud was yesterday when we laid down to rest in a garden.</h4>
+						<h4>{{description}}</h4>
 						
-						<button class="btn btn-block">Read more</button><button class="btn btn-block">Donate</button>
+						<a href="{{storyPath this}}"><button class="btn btn-block btn-dark">Read more</button></a>
+						<button class="btn btn-block btn-dark">Donate</button>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 story">
-				<img src="/img/story2_main.jpg"/>
-				<div class="hovershow">
-					<div class="info">
-						<h4>I couldn’t fall asleep, so I decided to let Mahmoud rest, and went for a short walk by the river.</h4>
+			{{/each}}
 
-						<div class="btn-group"><div class="btn-group"><button class="btn">Read more</button><button class="btn">Donate</button></div></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 story">
-				<img src="/img/story_main.jpg"/>
-				<div class="hovershow">
-					<div class="info">
-						<h4>My fondest memory of Mahmoud was yesterday when we laid down to rest in a garden.</h4>
-						
-						<button class="btn btn-block">Read more</button><button class="btn btn-block">Donate</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 story">
-				<img src="/img/story2_main.jpg"/>
-				<div class="hovershow">
-					<div class="info">
-						<h4>My fondest memory of Mahmoud was yesterday when we laid down to rest in a garden.</h4>
-						
-						<button class="btn btn-block">Read more</button><button class="btn btn-block">Donate</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 story">
-				<img src="/img/story_main.jpg"/>
-				<div class="hovershow">
-					<div class="info">
-						<h4>My fondest memory of Mahmoud was yesterday when we laid down to rest in a garden.</h4>
-						
-						<button class="btn btn-block">Read more</button><button class="btn btn-block">Donate</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 story">
-				<img src="/img/story2_main.jpg"/>
-				<div class="hovershow">
-					<div class="info">
-						<h4>My fondest memory of Mahmoud was yesterday when we laid down to rest in a garden.</h4>
-						
-						<button class="btn btn-block">Read more</button><button class="btn btn-block">Donate</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 story">
-				<img src="/img/story_main.jpg"/>
-				<div class="hovershow">
-					<div class="info">
-						<h4>My fondest memory of Mahmoud was yesterday when we laid down to rest in a garden.</h4>
-						
-						<button class="btn btn-block">Read more</button><button class="btn btn-block">Donate</button>
-					</div>
-				</div>
-			</div>
 			<div class="col-md-4 story">
 				<img src="/img/story2_main.jpg"/>
 				<div class="hovershow">
@@ -87,7 +31,7 @@
 			<div class="col-md-4 story">
 				<div class="add">
 					<center>
-					<button class="btn btn-dark btn-lg">Add your own story</button>
+					<button class="btn btn-lg">Add your own story</button>
 					</center>
 				</div>
 			</div>

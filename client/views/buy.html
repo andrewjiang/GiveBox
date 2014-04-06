@@ -1,46 +1,47 @@
 <template name="buy">
+	{{#with currentStory}}
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-6 col-md-6"  id="story-bigimage">
-		    <a href="#">
-		      <img src="http://2.bp.blogspot.com/-_3xtIh7z_gg/UItSt2JjtDI/AAAAAAAACWM/hEHFeLqAmPQ/s1600/DSC_0001b.JPG" style="overflow:hidden" class="big-image" alt="...">
-		    </a>
-		  </div>
-		  <div class="col-xs-6" id="story-wishlist">
+		  <div class="col-xs-12" id="story-wishlist">
 				<div class="well">
 					<table class="table">
 						<!--if wishlist doesn't exist-->
-						Wishlist goes here
+						{{name}}'s Wishlist
 						<tr>
 							<th>Picture</th>
 					  	<th>Name</th>
 					  	<th>Category</th>
-					  	<th>Button</th>
+					  	<th>Cost</th>
+					  	<th>Donate item</th>
 					  </tr>
 
 					  <tr>
 					  	<td><img src="/images/thumbnail-clans-case.png" /></td>
 					  	<td>Stuff</td>
 					  	<td>Stuff</td>
-					  	<td><button>Buy</button></td>
+					  	<td>$10</td>
+					  	<td><input type="checkbox"></td>
 					  </tr>
 
 					  <tr>
 					  	<td><img src="/images/thumbnail-clans-case.png" /></td>
 					  	<td>Stuff</td>
 					  	<td>Stuff</td>
-					  	<td><button>Buy</button></td>
+					  	<td>$10</td>
+					  	<td><input type="checkbox"></td>
 					  </tr>
 
 					  <tr>
 					  	<td><img src="/images/thumbnail-clans-case.png" /></td>
 					  	<td>Stuff</td>
 					  	<td>Stuff</td>
-					  	<td><button>Buy</button></td>
+					  	<td>$10</td>
+					  	<td><input type="checkbox"></td>
 					  </tr>
 			   </table>
 				</div>
 			</div>
 		</div>
 	</div>
+	{{/with}}
 </template>
