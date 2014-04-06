@@ -6,6 +6,31 @@ Template.story.helpers({
 	}
 	
 });
+Template.story.events({
+  'click #donateBtn' : function(e,tmp) {
+      e.preventDefault
+      var prices = document.getElementsByClassName('price');
+      var total = 0;
+      
+      for (var i in prices){
+        var price = prices[i];
+        if (price.checked) {
+          price = price.value;
+          if(price) {
+            total += Number(price.substring(1));
+          }
+        }
+      }
+      var sp = document.getElementById("totalprice");
+      sp.innerHTML = '$' + total.toFixed(2);
+     
+  },
+
+  'click #confirmModalDone' : function(e, tmp) {
+      location.reload();
+  },
+})
+
 
 Template.paypalCreditCardForm.events({
     'submit #paypal-payment-form': function(evt, tmp){
@@ -35,17 +60,21 @@ Template.paypalCreditCardForm.events({
       console.log(newdata);
       mail = Stories.findOne(Session.get("currentStoryId")).email;
       console.log(total.toFixed(2));
-
+      var sp2 = document.getElementById('totalprice2');
+      sp2.innerHTML = '$' + total.toFixed(2);
       var card_data = Template.paypalCreditCardForm.card_data();
 
       //send twilio sms
-
       Meteor.Paypal.purchase(card_data, {total: total.toFixed(2), currency: 'USD'}, function(err, results){
         if (err) console.error(err);
         else {
-        	Meteor.http.get('/twilio_ep',{},function(ret){console.log(ret)});
-        	Wishlist.update(item_id, {"data":newdata, "email":mail});
-        	console.log(results);
+          if (results['saved']){
+            $('#myModal').modal('hide');
+            $('#confirmModal').modal('show');
+        	 console.log(results);
+           Meteor.http.get('/twilio_ep',{},function(ret){console.log(ret)});
+        	 Wishlist.update(item_id, {"data":newdata, "email":mail});
+        	 }
         }
       });
     }
