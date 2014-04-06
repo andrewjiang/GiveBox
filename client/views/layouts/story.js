@@ -74,7 +74,7 @@ Template.paypalCreditCardForm.events({
             $('#confirmModal').modal('show');
         	 console.log(results);
            Timeline.insert( {"price" : totalprice3,"id":Session.get("currentStoryId"),"itemnames":itemnames});
-
+           Meteor.http.get('/send_email_ep',{},function(ret){console.log(ret)});
            Meteor.http.get('/twilio_ep',{},function(ret){console.log(ret)});
         	 Wishlist.update(item_id, {"data":newdata, "email":mail});
         	 }
