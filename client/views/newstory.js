@@ -21,10 +21,7 @@ Template.newstory.events({
 		},1000);
 	},
 });
-function brbr(str) { 
-    var breakTag = '<br>';
-    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
-}
+
 Template.newstory2.events({
 	'submit form': function(e,template) {
 		e.preventDefault();
@@ -33,7 +30,7 @@ Template.newstory2.events({
 	    var reader = new FileReader();
 	    story = Stories.findOne(Session.get("currentStoryId"))
  				Stories.update({_id:story._id}, { $set: { 
-	      	description: brbr($("#exampleInputFile").val()),
+	      	description: $("#exampleInputFile").val(),
 	      }});
 	    reader.onload = function(e) {
 	      // Add it to your model
