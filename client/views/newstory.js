@@ -4,7 +4,9 @@ Template.newstory.events({
 
 		var story = {
 			name: $(event.target).find('[name=name]').val(),
-			email: $(event.target).find('[name=email]').val()
+			email: $(event.target).find('[name=email]').val(),
+			age: $(event.target).find('[name=age]').val(),
+			family: $(event.target).find('[name=family]').val()
 		}
 
 		story._id = Stories.insert(story);

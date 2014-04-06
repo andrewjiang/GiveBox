@@ -3,28 +3,22 @@
 		<div class="jumbotron">
 		  <h1>Directly give families in need exactly what they need</h1>
 		  <h3>Hear their stories, impact their lives</h3>
-		  <p><a class="btn btn-primary btn-lg" role="button">View stories</a></p>
+		  <p><a class="btn btn-primary btn-lg" role="button" href="/all">View stories</a></p>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<span class="pull-left">Featured stories</span>
-				<a href="#"><span class="pull-right">See all</span></a>
+				<a href="/all"><span class="pull-right">See all</span></a>
 			</div>
-			<div class="col-md-4">
-				<img src="#"/>
-				<p>Story 1</p>
-				<button>Donate</button>
-			</div>
-			<div class="col-md-4">
-				<img src="#" />
-				<p>Story 2</p>
-				<button>Donate</button>
-			</div>
-			<div class="col-md-4">
-				<img src="#" />
-				<p>Story 3</p>
-				<button>Donate</button>
-			</div>
+
+			{{#each stories}}
+				<div class="col-md-4">
+					<img src="#"/>
+					<h3>{{name}}</h3>
+					<p>{{description}}</p>
+					<button><a href="{{storyPath this}}">Donate</a></button>
+				</div>
+			{{/each}}
 		</div>
 	</div>
 </template>

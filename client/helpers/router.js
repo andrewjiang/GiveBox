@@ -11,4 +11,5 @@ Meteor.Router.add({
 		to: 'story',
 		and: function(id) { Session.set("currentStoryId", id); }
 	},
+	'/all': 'all',
 });
