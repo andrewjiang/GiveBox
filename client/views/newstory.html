@@ -1,0 +1,88 @@
+<template name="newstory">
+	<div class="container">
+			<center>
+				<h1>Create your profile</h1>
+			</center>
+			<br>
+			<div class="well">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<form role="form">
+							<div class="form-group">
+						    <label for="storyName">Name</label>
+						    <input type="text" class="form-control" id="storyName" placeholder="John Smith" name="name">
+						  </div>
+						  <div class="form-group">
+						    <label for="storyEmail">Email</label>
+						    <input type="email" class="form-control" id="storyEmail" placeholder="john@gmail.com" name="email">
+						  </div>
+						  <button type="submit" class="btn btn-default">Next</button>
+						</form>
+					</div>			
+				</div>
+			</div>
+		</div>
+</template>
+
+<template name="newstory2">
+	<div class="container">
+			<center>
+				<h1>Write your story</h1>
+			</center>
+			<br>
+			<div class="well">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<form role="form">
+							<div class="form-group">
+						    <label for="exampleInputFile">Tell us your story</label>
+						    <textarea class="form-control" id="exampleInputFile" name="description"></textarea>
+						    <p class="help-block">Example block-level help text here.</p>
+						  </div>
+							<div class="form-group">
+						    <label for="exampleInputFile">Upload Images</label>
+						    <input type="file" id="exampleInputFile" name="image">
+						    <p class="help-block">Example block-level help text here.</p>
+						  </div>
+						  <button type="submit" class="btn btn-default">Next</button>
+						</form>
+					</div>			
+				</div>
+			</div>
+		</div>
+</template>
+
+<template name="newstory3">
+	<div class="container-fluid">
+			<center>
+				<h1>{{#with currentStory}}{{name}}{{/with}}
+
+					Set up your wishlist</h1> <button>Finish</button>
+			</center>
+			<br>
+			<div class="well">
+				<div class="row">
+					<div class="col-md-8">
+							<iframe style="width:100%; height:500px;" src="https://www.amazon.com/gp/registry/wishlist/ref=cm_wl_rl-create-pub-list" sandbox="allow-forms allow-scripts"></iframe>
+					</div>
+					<div class="col-md-4">
+							<h2>Your wishlist</h2>
+							<table class="table">
+								<tr>
+									<th>Image</th>
+							  	<th>Item</th>
+							  	<th>Buy</th>
+							  </tr>
+
+					      <tr>
+							  	<td><img src="#"/></td>
+							  	<td>Clothing</td>
+							  	<td><button>Buy</button></td>
+							  </tr>
+
+							</table>
+					</div>				
+				</div>
+			</div>
+	</div>
+</template>

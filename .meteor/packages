@@ -9,3 +9,6 @@ insecure
 router
 require
 http
+bootstrap-3
+accounts-ui
+accounts-facebook

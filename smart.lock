@@ -3,7 +3,11 @@
   "dependencies": {
     "basePackages": {
       "router": {},
+<<<<<<< HEAD
       "require": {}
+=======
+      "bootstrap-3": {}
+>>>>>>> 5a1bbf9ce8343f0b714538bdd2e0395d81088ee0
     },
     "packages": {
       "router": {
@@ -11,10 +15,17 @@
         "tag": "v0.6.0",
         "commit": "1e2860138402fb288c2fbce70338161f4d86a5d4"
       },
+<<<<<<< HEAD
       "require": {
         "git": "https://github.com/tomconnors/meteor-require.git",
         "tag": "v0.1.0",
         "commit": "b9c5a87e9f92019cca882234086b7d32719f67e2"
+=======
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
+        "tag": "v3.1.1-1",
+        "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+>>>>>>> 5a1bbf9ce8343f0b714538bdd2e0395d81088ee0
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
