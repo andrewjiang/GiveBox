@@ -85,7 +85,7 @@ Template.paypalCreditCardForm.events({
 
 Template.story.rendered = function() {
   //var items = Wishlist.findOne({"email":"xliang02@students.poly.edu"});
-  var items = Wishlist.findOne({"email":Stories.findOne(Session.get("currentStoryId")).email});
+  var items = Wishlist.findOne({"email":Stories.findOne(Session.get("currentStoryId")).email}, {sort: {ts: -1}});
   console.log(items);
   var html = '';
   for(var i in items['data']){
@@ -104,7 +104,7 @@ Template.story.rendered = function() {
 setTimeout(function(){
 	//var items = Wishlist.findOne({"email":Stories.findOne(Session.get("currentStoryId")).email});
 	//var items = Wishlist.findOne({"email":"xliang02@students.poly.edu"});
-  var items = Wishlist.findOne({"email":Stories.findOne(Session.get("currentStoryId")).email});
+  var items = Wishlist.findOne({"email":Stories.findOne(Session.get("currentStoryId")).email}, {sort: {ts: -1}});
 	var html = '';
 	for(var i in items['data']){
 		var item = items['data'][i];
