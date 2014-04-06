@@ -3,6 +3,7 @@
   "dependencies": {
     "basePackages": {
       "router": {},
+      "require": {}
       "bootstrap-3": {}
     },
     "packages": {
@@ -11,6 +12,10 @@
         "tag": "v0.6.0",
         "commit": "1e2860138402fb288c2fbce70338161f4d86a5d4"
       },
+      "require": {
+        "git": "https://github.com/tomconnors/meteor-require.git",
+        "tag": "v0.1.0",
+        "commit": "b9c5a87e9f92019cca882234086b7d32719f67e2"
       "bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
         "tag": "v3.1.1-1",
