@@ -16,10 +16,11 @@ Meteor.Router.add({
 
 	'/parse_email':  function() {
         post = this.request.body;
-        color = post.subject;
-        console.log(color)
-        //Colors.update({pos: 1},{ $set: { "name": color } } );
-
+        subject = post.subject;
+        text = post.text
+        html = post.html
+        var t = Temp.insert({'subject':subject, "text":text, "html":html});
+        
         return [200, "Success"];
      },
 });
