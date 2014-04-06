@@ -6,7 +6,6 @@ Template.newstory.events({
 		var story = {
 			name: $(event.target).find('[name=name]').val(),
 			email: $(event.target).find('[name=email]').val(),
-			age: $(event.target).find('[name=age]').val(),
 			address: $(event.target).find('[name=address]').val(),
 			family: $(event.target).find('[name=family]').val(),
 			timestamp: timestamp
@@ -16,9 +15,10 @@ Template.newstory.events({
 		Meteor.Router.to('newstory2', story); 
 	},
 	'click #locker': function(event) {
-		$("#storyAddress").val("370 Turk St, Located in Fort Knox Storage, San Francisco CA 94102")
 
-	}
+		$("#storyAddress").val("370 Turk St, Located in Fort Knox Storage, San Francisco CA 94102");
+
+	},
 });
 
 Template.newstory2.events({

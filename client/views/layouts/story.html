@@ -13,7 +13,6 @@
 		    </a>
 		    <div class="well about-box">
 			    <h4>Family Name: <span class="goodlabel">{{name}}</span></h4>
-			    <h4>Age: <span class="goodlabel">{{age}}</span></h4>
 			    <h4>Family Members: <span class="goodlabel">{{family}}</span></h4>
 			    <h3>Our story</h3>
 			    <h4 style="line-height:26px;" class="goodlabel">{{description}}</h4>
@@ -27,17 +26,17 @@
 				        </div>
 				        <div class="panel panel-default">
 				            <div class="panel-heading">
-				                <h4>test test test test test </h4>
+				                <h4>Launched our GIVEBOX</h4>
 				            </div>
 				            <div class="panel-body">
-				                test test test test test 
+				                Thank you everyone for checking out our Givebox. We really appreciate the support!
 				            </div>
 				        </div>
 				    	</div>
 					</div>
 
 
-		  <div class="col-md-4" id="story-wishlist" style="position:fixed; right:40px; top:120px;">
+		  <div class="col-md-5" id="story-wishlist">
 				<div class="well">
 					<h2>The {{name}}'s Wishlist</h2>
 					<table class="table" id="wishlist_table">
@@ -61,6 +60,22 @@
       </div>
       <div class="modal-body">
         {{> paypalCreditCardForm }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal2 -->
+<div class="modal fade" id="confirmModal" tabindex="-1" style="z-index: 999999999;" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Success!</h4>
+      </div>
+      <div class="modal-body">
+        Thanks for your $45 donation to The {{name}}s. Your selected items will be ordered and shipped to The {{names}}s this week!
+      	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

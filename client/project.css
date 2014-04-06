@@ -113,7 +113,7 @@ img{
 .container-light{
     margin-top: 20px;
     width:100%;
-    background-color: #fafbfc;
+    background-color: #333;
     padding:40px; 
  }
 
@@ -236,11 +236,12 @@ img{
 
 .blurb{
     width:80%;
-    color: #777 !important;
+    color: rgba(52, 73, 94, 0.7) !important;
+    font-family: 'Oswald';
 }
 
 .blurb h2{
-	font-size: 36px;
+	font-size: 32px;
 }
 
 /* Transitions and class for reduced height */
@@ -399,4 +400,18 @@ img{
     width: 70px;
     margin-top: 10px;
     margin-right: 10px;
+}
+.logo-img-sm{
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+#social-icons img{
+    width: 40px;
+    margin-top: -10px;
+}
+#social-icons a{
+    margin-left: 0px;
 }
